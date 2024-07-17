@@ -32,7 +32,9 @@ export default defineConfig({
     actionTimeout: 10000,
     video: 'on',
     screenshot: 'on'
+    
   },
+  
 
   /* Configure projects for major browsers */
   projects: [
