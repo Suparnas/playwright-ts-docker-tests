@@ -11,6 +11,6 @@ test('Create Transfer', async ({ page }) => {
   await page.locator('.mat-radio-container').nth(1).check();
   await page.getByRole('button', { name: 'Add'}).click();
   await expect(page.locator('td.left.fs-list-col.ng-star-inserted').nth(2)).toHaveText('Monthly Subscription 1');
-  await expect(page.locator('td.left.fs-list-col.ng-star-inserted').nth(1)).toHaveText(' Jul 17, 2024 ');
+  await expect(page.locator('td.left.fs-list-col.ng-star-inserted').nth(1)).toHaveText(' Oct 16, 2024 ');
   });
 });
