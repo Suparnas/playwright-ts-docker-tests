@@ -14,6 +14,7 @@ test.describe('Contact', () => {
     const response = await fakerAPI.get('users');
     console.log( await response.json());
   })
+
   test('Fill contact form and verify success message', async ({ page }) => {
     contactPage = new ContactPage(page);
 
@@ -27,7 +28,3 @@ test.describe('Contact', () => {
     await expect(contactPage.successTxt).toHaveText('Thanks for contacting us! We will be in touch with you shortly')
   })
 })
-
-function async(arg0: { playwright: any; }): (args: import("playwright/test").PlaywrightTestArgs & import("playwright/test").PlaywrightTestOptions & import("playwright/test").PlaywrightWorkerArgs & import("playwright/test").PlaywrightWorkerOptions, testInfo: import("playwright/test").TestInfo) => Promise<any> | any {
-  throw new Error('Function not implemented.');
-}

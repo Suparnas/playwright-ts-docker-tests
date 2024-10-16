@@ -6,12 +6,11 @@ import nock from 'nock';
 let registrationPage: RegisterPage;
 
 test.describe('DemoQA Registration and Login', () => {
-    let firstname, lastname, email, password;
+    let username, email, password;
 
     test.beforeEach(async ({ page }) => {
         // Generate dynamic registration details
-        firstname = faker.internet.userName();
-        lastname = faker.internet.userName();
+        username = faker.internet.userName();
         email = faker.internet.email();
         password = faker.internet.password();
     });
@@ -25,21 +24,21 @@ test.describe('DemoQA Registration and Login', () => {
 
     test('Should register a new user', async ({ page }) => {
         registrationPage = new RegisterPage(page);    
-        await registrationPage.navigate('https://formspree.io/register');
+        await registrationPage.navigate('/my-account/');
         // Fill in registration form
         //await registrationPage.waitForSelectors();
-        await registrationPage.fillRegisterForm(firstname, lastname, email, "8bjF@Myt3FmggExJ");
+        await registrationPage.fillRegisterForm(username, email, password);
                
-        nock('https://captcha-service.example.com')
-        .post('/verify', { response: 'mocked-captcha-response' })
-        .reply(200, { success: true });
+        // nock('https://captcha-service.example.com')
+        // .post('/verify', { response: 'mocked-captcha-response' })
+        // .reply(200, { success: true });
 
-        await page.waitForURL('https://formspree.io/forms');
+        //await page.waitForURL('https://formspree.io/forms');
 
         // Verify that the URL is as expected
-        expect(page.url()).toBe('https://formspree.io/forms'); 
-        const popup = page.locator('text="Welcome, test. Tell us about yourself."');
-        await expect(popup).toBeVisible();
+        expect(page.url()).toBe('https://practice.sdetunicorns.com/my-account/'); 
+        const hello = page.locator('text="Hello"');
+        await expect(hello).toBeVisible();
     });
 
 });

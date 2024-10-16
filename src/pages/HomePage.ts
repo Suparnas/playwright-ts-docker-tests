@@ -8,7 +8,7 @@ export class HomePage extends BasePage  {
 
    constructor(page: Page) {
      super(page);
-     this.logo = page.locator('h1.text-5xl.font-black.leading-none');
+     this.logo = page.locator('h1.elementor-heading-title.elementor-size-default');
    }
  
 //methods 
