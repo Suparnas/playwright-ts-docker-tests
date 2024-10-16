@@ -3,10 +3,10 @@ on: [push]
 jobs:
     test-e2e:
         name: Run E2E test
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu@latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v2
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
               with:
                 node-version: '20'
             - name: Install dependencies
@@ -17,7 +17,7 @@ jobs:
               run: npx playwright test test/*.*.ts
             - name: Upload test results
               if: always()
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: Test Results
                 path: test-results
