@@ -1,7 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from "./BasePage";
 
-
 export class ContactPage extends BasePage  {
   nameInput: Locator;
   emailInput: Locator;
