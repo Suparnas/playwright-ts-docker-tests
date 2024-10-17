@@ -22,8 +22,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   //reporter: 'html',
-  reporter: [['html', {outputFolder: 'test-results'}], ['allure-playwright', {outputFolder: 'test-allure-results'}],['line']],
-
+  //reporter: [['html', {outputFolder: 'test-results'}], ['allure-playwright', {outputFolder: 'test-allure-results'}],['line']],
+  //reporter: [['allure-playwright'], ['line']],
+  reporter: [["allure-playwright"],["line"]],
   globalSetup: require.resolve('./utils/global-setup'),
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
