@@ -24,7 +24,7 @@ export default defineConfig({
   //reporter: 'html',
   //reporter: [['html', {outputFolder: 'test-results'}], ['allure-playwright', {outputFolder: 'test-allure-results'}],['line']],
   //reporter: [['allure-playwright'], ['line']],
-  reporter: [["allure-playwright"],["line"]],
+  reporter: [["allure-playwright",{outputFolder: 'test-results'}],["line"]],
   globalSetup: require.resolve('./utils/global-setup'),
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
