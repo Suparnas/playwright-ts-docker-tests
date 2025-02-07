@@ -1,0 +1,41 @@
+Success message not found: locator.waitFor: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('alert', { name: 'Thanks for your message! We will contact you shortly.' }) to be visible
+
+    at ContactPage.verifySubmissionSuccess (/Users/suparnasoman/Documents/Ecommerce/Ecomm-Playwright_Typescript/src/pages/contact-page.ts:34:33)
+    at /Users/suparnasoman/Documents/Ecommerce/Ecomm-Playwright_Typescript/tests/ecom-contact/contact.spec.ts:18:27 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@17',
+    location: {
+      file: '/Users/suparnasoman/Documents/Ecommerce/Ecomm-Playwright_Typescript/src/pages/contact-page.ts',
+      line: 34,
+      column: 33,
+      function: 'ContactPage.verifySubmissionSuccess'
+    },
+    category: 'pw:api',
+    title: "locator.getByRole('alert', { name: 'Thanks for your message! We will contact you shortly.' }).waitFor",
+    apiName: 'locator.waitFor',
+    params: {
+      selector: 'internal:role=alert[name="Thanks for your message! We will contact you shortly."i]',
+      strict: true,
+      omitReturnValue: true,
+      state: 'visible',
+      timeout: 60000
+    },
+    boxedStack: undefined,
+    steps: [],
+    complete: [Function: complete],
+    endWallTime: 1738968839146,
+    error: {
+      message: 'Error: locator.waitFor: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        "  \x1B[2m- waiting for getByRole('alert', { name: 'Thanks for your message! We will contact you shortly.' }) to be visible\x1B[22m\n",
+      stack: 'Error: locator.waitFor: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        "  \x1B[2m- waiting for getByRole('alert', { name: 'Thanks for your message! We will contact you shortly.' }) to be visible\x1B[22m\n" +
+        '\n' +
+        '    at ContactPage.verifySubmissionSuccess (/Users/suparnasoman/Documents/Ecommerce/Ecomm-Playwright_Typescript/src/pages/contact-page.ts:34:33)\n' +
+        '    at /Users/suparnasoman/Documents/Ecommerce/Ecomm-Playwright_Typescript/tests/ecom-contact/contact.spec.ts:18:27'
+    }
+  }
+}

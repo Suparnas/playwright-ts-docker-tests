@@ -12,7 +12,8 @@ test.describe("Contact Form Tests", () => {
 
   contactData.forEach(({ description, firstName, lastName, email, subject, message, fileUpload, expectedResult }) => {
     test(description, async ({ page }) => {
-      await contactPage.submitContactForm(firstName, lastName, email, subject, message, fileUpload);
+      await contactPage.fillContactForm(firstName, lastName, email, subject, message, fileUpload);
+      await contactPage.submitContactForm();
       if (expectedResult === 'success') {
         await contactPage.verifySubmissionSuccess();
       } else {
