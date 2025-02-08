@@ -10,7 +10,7 @@ function generatePassword() {
 function generateDOB(minAge: number) {
   const today = new Date();
   const minDOB = new Date(today.getFullYear() - minAge, today.getMonth(), today.getDate());
-  return faker.date.past(30, minDOB).toISOString().split('T')[0];
+  return faker.date.past({ years: 30, refDate: minDOB }).toISOString().split('T')[0];
 }
 
 export const loginData = [
