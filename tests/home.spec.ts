@@ -1,7 +1,4 @@
 import { test, expect } from '@playwright/test';
-import path from 'path';
-import fs from 'fs';
-
 
 test.describe("Home page with no auth", () => {
 
@@ -11,25 +8,8 @@ test.describe("Home page with no auth", () => {
     });
 
     test("visual test", async ({page}) => {
-      await test.step("visual test", async () => {
-        const screenshotPath = path.join(__dirname, 'utils', 'screenshots', 'home', 'checkout-page-customer01.png');
-        const diffPath = path.join(__dirname, 'test-results', 'home', 'checkout-page-customer01-diff.png');
-
-        // Ensure the directories exist
-        fs.mkdirSync(path.dirname(screenshotPath), { recursive: true });
-        fs.mkdirSync(path.dirname(diffPath), { recursive: true });
-
-        try {
-          await expect(page).toHaveScreenshot(screenshotPath, {
-            mask: [page.getByTitle("Practice Software Testing - Toolshop")],
-            timeout: 60000 // Increased timeout to 60 seconds
-          });
-        } catch (error) {
-          console.error('Visual test failed:', error);
-          await page.screenshot({ path: diffPath });
-          throw error;
-        }
-      });
+      await page.waitForLoadState("networkidle");
+      await expect(page).toHaveScreenshot("home-page-no-auth.png", {mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
     });
 
     test("check sign in", async ({page}) => {
@@ -64,10 +44,10 @@ test.describe("Home page customer 01  auth", () => {
       await page.goto("https://practicesoftwaretesting.com"); 
     });
 
-    // test("visual test", async ({page}) => {
-    //   await page.waitForLoadState("networkidle");
-    //   await expect(page).toHaveScreenshot("home-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    // });
+    test("visual test", async ({page}) => {
+      await page.waitForLoadState("networkidle");
+      await expect(page).toHaveScreenshot("home-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    });
 
     test("Check Customer 01 is signed in", async ({page}) => {
       await expect(page.getByTestId('nav-sign-in')).not.toBeVisible();
