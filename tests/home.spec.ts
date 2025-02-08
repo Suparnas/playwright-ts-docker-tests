@@ -3,13 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe("Home page with no auth", () => {
 
     test.beforeEach(async ({page}) => {
-      await page.goto("https://practicesoftwaretesting.com");
+      await page.setViewportSize({ width: 1280, height: 720 });
+      await page.goto("/");
     });
 
-    // test("visual test", async ({page}) => {
-    //   await page.waitForLoadState("networkidle");
-    //   await expect(page).toHaveScreenshot("home-page-no-auth.png", {mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    // });
+    test("visual test", async ({page}) => {
+      await page.waitForLoadState("networkidle");
+      await expect(page).toHaveScreenshot("home-page-no-auth.png", {mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    });
 
     test("check sign in", async ({page}) => {
       //Ensure the sign-in link is present
@@ -75,9 +76,9 @@ test.describe("Home page customer 01  auth", () => {
       await page.getByTestId('finish').click();
       await expect(page.locator('.help-block')).toHaveText('Payment was successful');
 
-    //   await test.step("visual test", async () => {
-    //   await expect(page).toHaveScreenshot("checkout-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    // });
+      await test.step("visual test", async () => {
+      await expect(page).toHaveScreenshot("checkout-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    });
   });
 });
 
