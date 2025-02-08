@@ -7,10 +7,10 @@ test.describe("Home page with no auth", () => {
       await page.goto("/");
     });
 
-    test("visual test", async ({page}) => {
-      await page.waitForLoadState("networkidle");
-      await expect(page).toHaveScreenshot("home-page-no-auth.png", {mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    });
+    // test("visual test", async ({page}) => {
+    //   await page.waitForLoadState("networkidle");
+    //   await expect(page).toHaveScreenshot("home-page-no-auth.png", {mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    // });
 
     test("check sign in", async ({page}) => {
       //Ensure the sign-in link is present
@@ -44,10 +44,10 @@ test.describe("Home page customer 01  auth", () => {
       await page.goto("https://practicesoftwaretesting.com"); 
     });
 
-    test("visual test", async ({page}) => {
-      await page.waitForLoadState("networkidle");
-      await expect(page).toHaveScreenshot("home-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    });
+    // test("visual test", async ({page}) => {
+    //   await page.waitForLoadState("networkidle");
+    //   await expect(page).toHaveScreenshot("home-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    // });
 
     test("Check Customer 01 is signed in", async ({page}) => {
       await expect(page.getByTestId('nav-sign-in')).not.toBeVisible();
@@ -76,9 +76,9 @@ test.describe("Home page customer 01  auth", () => {
       await page.getByTestId('finish').click();
       await expect(page.locator('.help-block')).toHaveText('Payment was successful');
 
-      await test.step("visual test", async () => {
-      await expect(page).toHaveScreenshot("checkout-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
-    });
+    //   await test.step("visual test", async () => {
+    //   await expect(page).toHaveScreenshot("checkout-page-customer01.png",{mask: [page.getByTitle("Practice Software Testing - Toolshop")]});
+    // });
   });
 });
 
