@@ -1,0 +1,29 @@
+{
+  id: '01JKMAD3WSE5V9WVKDSQJEJWHN',
+  name: 'Combination Pliers',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra felis nec pellentesque feugiat. Donec faucibus arcu maximus, convallis nisl eu, placerat dolor. Morbi finibus neque nec tincidunt pharetra. Sed eget tortor malesuada, mollis enim id, condimentum nisi. In viverra quam at bibendum ultricies. Aliquam quis eros ex. Etiam at pretium massa, ut pharetra tortor. Sed vel metus sem. Suspendisse ac molestie turpis. Duis luctus justo massa, faucibus ornare eros elementum et. Vestibulum quis nisl vitae ante dapibus tempor auctor ut leo. Mauris consectetur et magna at ultricies. Proin a aliquet turpis.',
+  price: 14.15,
+  is_location_offer: false,
+  is_rental: false,
+  in_stock: true,
+  product_image: {
+    id: '01JKMAD3W0FS52SN647MW2WEHP',
+    by_name: 'Helinton Fantin',
+    by_url: 'https://unsplash.com/@fantin',
+    source_name: 'Unsplash',
+    source_url: 'https://unsplash.com/photos/W8BNwvOvW4M',
+    file_name: 'pliers01.avif',
+    title: 'Combination pliers'
+  },
+  category: {
+    id: '01JKMAD3VF2NRR1XK19HW9GJVN',
+    name: 'Pliers',
+    slug: 'pliers',
+    parent_id: '01JKMAD3V1Q2X6EJZQMDVCV9C5'
+  },
+  brand: {
+    id: '01JKMAD3T5PAF5RDPZWQCR4F20',
+    name: 'ForgeFlex Tools',
+    slug: 'forgeflex-tools'
+  }
+}

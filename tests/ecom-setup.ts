@@ -11,6 +11,7 @@ export const test = base.extend<{ loginPage: LoginPage }>({
 
 // Login before each test (if needed)
 test.beforeEach(async ({ page, loginPage }) => {
-  await loginPage.navigate("https://practicesoftwaretesting.com/login");
-  await loginPage.login("testuser", "password123");
+  await loginPage.navigate("/");
+  await loginPage.loginfill("testuser", "password123");
+  await loginPage.verifyLoginSuccess();
 });

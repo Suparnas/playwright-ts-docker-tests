@@ -2,7 +2,6 @@ import { test} from "@playwright/test";
 import { RegistrationPage } from "../../src/pages/registration-page";
 import { registerData } from "../../utils/test-data.ts";
 
-
 test.describe("Registration Tests", () => {
     let registrationPage: RegistrationPage;
       

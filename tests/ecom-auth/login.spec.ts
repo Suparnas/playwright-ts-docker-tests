@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test"  // Import the custom test setup
+import { test } from "@playwright/test"  // Import the custom test setup
 import { LoginPage } from "../../src/pages/login-page";
 import { loginData } from "../../utils/test-data.ts";
 
