@@ -55,7 +55,7 @@ export const registerData = [
       state: faker.location.state(),
       country: 'Aruba',
       phone: faker.phone.number().replace(/\D/g, ''), // Only numbers
-      email: 'jane.doe1@example.com', // Keeping this static to simulate existing email
+      email: 'customer@practicesoftwaretesting.com', // Keeping this static to simulate existing email
       password: generatePassword(),
       expectedResult: 'failure'
     }
